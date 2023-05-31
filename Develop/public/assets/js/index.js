@@ -1,3 +1,8 @@
+
+
+
+
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -8,7 +13,7 @@ if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
-  newNoteBtn = document.querySelector('.new-note');
+  newNoteBtn = document.addEventListener('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
@@ -108,13 +113,13 @@ const handleNewNoteView = (e) => {
   renderActiveNote();
 };
 
-const handleRenderSaveBtn = () => {
-  if (!noteTitle.value.trim() || !noteText.value.trim()) {
-    hide(saveNoteBtn);
-  } else {
-    show(saveNoteBtn);
-  }
-};
+ const handleRenderSaveBtn = () => {
+   if (!noteTitle.value.trim() || !noteText.value.trim()) {
+     hide(saveNoteBtn);
+   } else {
+     show(saveNoteBtn);
+   }
+ };
 
 // Render the list of note titles
 const renderNoteList = async (notes) => {
