@@ -9,7 +9,7 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-if (window.location.pathname === '/notes') {
+if (window.location.pathname === '/notes.html') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
@@ -31,7 +31,7 @@ const show = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
-  fetch('./db/db.json', {
+  fetch('Develop\db\db.json', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch('./db/db.json', {
+  fetch('Develop\db\db.json', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const saveNote = (note) =>
   });
 ///api/notes/
 const deleteNote = (id) =>
-  fetch(`./db/db.json/${id}`, {
+  fetch(`Develop\db\db.json/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ const handleNewNoteView = (e) => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
-  if (window.location.pathname === '/notes') {
+  if (window.location.pathname === '/notes.html') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
 
