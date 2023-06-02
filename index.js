@@ -31,7 +31,7 @@ const show = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
-  fetch('Develop\db\db.json', {
+  fetch('Develop/db/db.json', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch('Develop\db\db.json', {
+  fetch('Develop/db/db.json', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const saveNote = (note) =>
   });
 ///api/notes/
 const deleteNote = (id) =>
-  fetch(`Develop\db\db.json/${id}`, {
+  fetch(`Develop/db/db.json/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -114,9 +114,9 @@ const handleNewNoteView = (e) => {
 };
 
  const handleRenderSaveBtn = () => {
-   if (!noteTitle.value.trim() || !noteText.value.trim()) {
-     hide(saveNoteBtn);
-   } else {
+    if (!noteTitle.value.trim() || !noteText.value.trim()) {
+      hide(saveNoteBtn);
+    } else {
      show(saveNoteBtn);
    }
  };
